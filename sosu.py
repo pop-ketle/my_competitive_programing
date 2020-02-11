@@ -39,3 +39,15 @@ def is_prime(n,k=50):
         if y!=n-1 and t&1==0:
             return False
         return True
+    
+def prime_factorize(n):
+    # 素因数分解 ちゃんとできてるかちょい不安
+    ls,tmp=[],n
+    c=int(n**0.5)+1
+    for i in range(2,c):
+        while tmp%i==0:
+            tmp=tmp//i
+            ls.append(i)
+        if tmp==1:
+            break
+    return ls
