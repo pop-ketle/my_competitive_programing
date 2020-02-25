@@ -1,3 +1,11 @@
+# mod対応の組み合わせ こっちの方がスマート
+def comb(n,a,mod=10**9+7):
+  x,y=1,1
+  for i in range(a):
+    x=(x*(n-i))%mod
+    y=(y*(i+1))%mod
+  return x*pow(y,mod-2,mod)%mod
+
 # mod対応の組み合わせ
 def comb(n,r,mod):
   def framod(n,mod,a=1):
